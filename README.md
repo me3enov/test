@@ -1,13 +1,11 @@
-# Тестовые задания
+# Overview
 
-Доброго времени суток, будущий стажер!  
+This repository contains my solutions to the technical challenges provided.
 
-Для перехода на следующий этап, необходимо выполнить два задания:
+## Conclusion
+I had a great time working on these challenges. Previously, my experience was primarily with React and Redux, so diving into Svelte was a fresh experience for me. Regardless, I'm always up for learning and adapting. I'm looking forward to possibly discussing my solutions and seeing where I might fit into your team.
 
-* Первое рассчитано на знание основ JS и понимание простейших структур данных.  
-* Второе является более творческим и потребует небольшого изучения документации.  
+Thanks for this opportunity.
 
-Склонируйте репозиторий к себе и после выполнения опубликуйте в своем GitHub.  
-Придумайте неприметное название репозитория, чтобы другие кандидаты его не нашли через поиск 🙃
-
-Желаем удачи и ждем вас в нашей команде!  
+Best,
+Artem
