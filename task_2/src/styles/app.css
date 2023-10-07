@@ -1,0 +1,134 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.converter {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.currency {
+  display: flex;
+  align-items: center;
+  background-color: #242424;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.currency:hover {
+  border-color: #aaa;
+}
+
+.currency:focus-within {
+  border-color: #63b603;
+}
+
+.input-container {
+  flex: 1;
+  position: relative;
+}
+
+.input-container::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10px;
+  bottom: 10px;
+  height: calc(100% - 20px);
+  width: 1px;
+  background-color: #aaa;
+}
+
+.input-number {
+  border: none;
+  transition: color 0.5s;
+  background-color: transparent;
+  font-size: 16px;
+  text-align: left;
+  padding: 20px;
+  appearance: none;
+}
+
+.input-invalid {
+  color: red;
+}
+
+.select-container {
+  flex: 2;
+  position: relative;
+}
+
+.select-container::after {
+  content: "\25BC";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+  pointer-events: none;
+  font-size: 10px;
+}
+
+.select {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  padding: 20px;
+  cursor: pointer;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.select::-ms-expand {
+  display: none;
+}
+
+.select:focus {
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.input-number:focus, .select:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.input-number::-webkit-inner-spin-button,
+.input-number::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.text {
+  margin-top: 20px;
+  font-size: 14px;
+}

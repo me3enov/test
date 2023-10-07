@@ -8,6 +8,6 @@
     "dev": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Artem Mezenov",
   "license": "ISC"
 }

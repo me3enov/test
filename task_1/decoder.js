@@ -1,20 +1,13 @@
-export function decodeFields(encoded, translations) {
-    const excludedKeys = new Set(['groupId', 'service', 'formatSize', 'ca']);
-    const uniqueIds = new Set();
+export const decodeObjects = (arr, dict) => {
+  return arr.reduce((acc, item) => {
+    const {decodedItem, ids} = Object.entries(item).reduceRight((acc, [key, value]) => {
+      acc.ids.add(value);
+      acc.decodedItem[key] = key.endsWith('Id') && key !== 'groupId' && dict[value] ? dict[value] : value;
+      return acc;
+    }, {decodedItem: {}, ids: new Set()});
 
-    const decoded = encoded.map(item => {
-        return Object.entries(item).reduce((acc, [key, value]) => {
-            if (key.endsWith('id') && !excludedKeys.has(key) && value !== null) {
-                if (translations[value]) {
-                    uniqueIds.add(value);
-                }
-                acc[key] = translations[value] || value;
-            } else {
-                acc[key] = value;
-            }
-            return acc;
-        }, {});
-    });
-
-    return { decoded, uniqueIds: Array.from(uniqueIds) };
-}
+    acc.decoded.push(decodedItem);
+    acc.uniqueIds = new Set([...acc.uniqueIds, ...ids]);
+    return acc;
+  }, {decoded: [], uniqueIds: new Set()});
+};
